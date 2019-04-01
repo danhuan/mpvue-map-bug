@@ -1,0 +1,336 @@
+
+body {
+  height: 100%;
+  margin: 0 auto;
+  font: 28rpx/1.4 "PingFangSC-Regular", "Helvetica Neue", Helvetica, "Microsoft YaHei", Tahoma, Arial, sans-serif;
+  color: #333;
+  background: #f5f5f5;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.wrap {
+  background: #fff;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.left {
+  float: left
+}
+
+.right {
+  float: right;
+}
+
+.t-c {
+  text-align: center;
+}
+
+.t-l {
+  text-align: left;
+}
+
+.t-r {
+  text-align: right;
+}
+.bg_white{
+  background-color: #fff;
+}
+.c_marker{
+  display: inline-block;
+  background-color: #B48A58;
+  color: #fefefe;
+  font-size: 12px;
+  text-align: center;
+}
+/*字数打点*/
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*多行打点*/
+.t-ellipsis{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+/*清除浮动*/
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/*黑色半透明弹框*/
+
+.mask-full {
+  position: fixed;
+  z-index: 98;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
+.protips {
+  position: fixed;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  width: 64%;
+  padding: 30px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  line-height: 1.8;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+}
+
+.list-loading,
+.list-end,
+.list-error {
+  padding: 20px 0
+}
+// ================================================ 边框 ================================================//
+
+// 0.5px分割线
+.line{
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #E2E2E2;
+    transform: scaleY(0.5)
+  }
+}
+
+/* 1px边框 */
+@mixin border_1px {
+  position: relative;
+  border: none;
+}
+
+@mixin border_1px_after{
+    content: '';
+    position: absolute;
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+}
+
+// 对应小区管理首页边线
+@mixin border_1px_after_house {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(153,132,51,0.16);;
+    box-sizing: border-box;
+}
+.b_right_house {
+  @include border_1px;
+  &::after {
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 400%;
+    transform-origin: left top;
+    transform: scale(0.25);
+    @include border_1px_after_house;
+  }
+}
+
+// 四边
+.b_all {
+  @include border_1px;
+  &::after {
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(0.5);
+    @include border_1px_after
+  }
+}
+
+
+// 左边框
+.b_left {
+  @include border_1px;
+  &::after {
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 400%;
+    transform-origin: left top;
+    transform: scale(0.25);
+    @include border_1px_after;
+  }
+}
+
+// 右边框
+.b_right {
+  @include border_1px;
+  &::after {
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 400%;
+    transform-origin: left top;
+    transform: scale(0.25);
+    @include border_1px_after;
+  }
+}
+
+// 上边框
+.b_top {
+  @include border_1px;
+  &::after {
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 1px;
+    transform-origin: left top;
+    transform: scale(0.25);
+    @include border_1px_after;
+  }
+}
+
+// 下边框
+.b_bottom {
+  @include border_1px;
+  &::after {
+    bottom: 0;
+    left: 0;
+    width: 400%;
+    height: 1px;
+    transform-origin: left top;
+    transform: scale(0.25);
+    @include border_1px_after;
+  }
+}
+
+// ================================================ 字体 ================================================//
+// 标题
+.f_title {
+  font-family: PingFangSC-Medium,Roboto-Medium,Noto-Medium ;
+  font-size: 14px;
+  color: $darkBlackBase;
+  letter-spacing: 0;
+  line-height: 14px;
+  height: 14px;
+}
+// 主题
+.f_theme {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: $orangeBase;
+  letter-spacing: 0;
+  line-height: 16px;
+  height: 16px;
+}
+// 副标题
+.f_sub {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: $lightBlackBase;
+  letter-spacing: 0;
+  line-height: 12px;
+  height: 12px;
+}
+
+// 辅助
+.f_assist {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: $moreLightBlackBase;
+  letter-spacing: 0;
+  line-height: 14px;
+  height: 14px;
+}
+.f_bold {
+  font-weight: bold;
+}
+// ================================================ 按钮 ================================================//
+
+// button {
+//   position:relative;
+//   display:block;
+//   margin:0;
+//   padding: 0 8px;
+//   box-sizing:border-box;
+//   font-size:12px;
+//   text-align:center;
+//   text-decoration:none;
+//   line-height:2;
+//   border-radius:2px;
+//   -webkit-tap-highlight-color:transparent;
+//   overflow:hidden;
+//   color:#000000;
+//   background-color:#F8F8F8;
+// }
+
+// button::after {
+//   border-radius:2px;
+// }
+
+.button_reset {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  text-align: inherit;
+  line-height: inherit;
+  overflow: inherit;
+  color: inherit;
+  background-color: inherit;
+  border-radius: 0;
+  border: none;
+}
+.button_reset::after {
+  border: none;
+}
+
+//主按钮
+.primary-btn {
+  border: 1px solid #C89247;
+  border-radius: 5px;
+  color: #C89247;
+  font-size: 13px;
+  text-align: center;
+}
+
+//反按钮
+.negative-btn {
+  width: 94px;
+  height: 34px;
+  line-height: 34px;
+  background-color: inherit;
+  border: 1px solid $darkBlackBase;
+  border-radius: 71px;
+  color: $darkBlackBase;
+  font-size: 14px;
+  text-align: center;
+}
+// ================================================  ================================================//
+.iphonex{
+  padding-bottom: 34px;
+}

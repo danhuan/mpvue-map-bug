@@ -1,0 +1,85 @@
+$unit: 1px;
+
+/*高 垂直居中*/
+@mixin Height($px) {
+    height:$px*$unit;
+    line-height:$px*$unit;
+}
+/*
+$bg 背景图片
+$type 背景图片平铺方式 cover contain
+*/
+@mixin Background($bg,$type) {
+  @if($bg == ''){
+    background:url(https://yangege.b0.upaiyun.com/1794a971b4043.png) no-repeat center;
+  }
+  @if($bg != '') {
+    background:url($bg) no-repeat center;
+  }
+  background-size:$type;
+}
+
+/*position 定位*/
+@mixin Position($name,$val,$t,$r,$b,$l) {
+  position: $name;
+  z-index: $val;
+  @if($t != ''){
+    top:$t*$unit;
+  }
+  @if($r != ''){
+    right:$r*$unit;
+  }
+  @if($b != ''){
+    bottom:$b*$unit;
+  }
+  @if($l != ''){
+    left:$l*$unit;
+  }
+  width: 100%;
+}
+
+/*多行字数打点*/
+@mixin Ellipsis($num){
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+/* 1px边框 */
+@mixin Border1px {
+  position: relative;
+  border: none;
+}
+
+@mixin Border1pxAfter{
+    content: '';
+    position: absolute;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+/* 字体 */
+@mixin Font($family, $size, $color) {
+  @if($family == '') {
+    font-family: PingFangSC-Regular;
+  }@else {
+    font-family:$family
+  }
+  @if($size == '') {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+  }@else {
+    font-size: $size * $unit;
+    height: $size * $unit;
+    line-height: $size * $unit;
+  }
+  @if($color == '') {
+    color: $darkBlackBase;
+  }@else {
+    color: $color
+  }
+  letter-spacing: 0;
+}

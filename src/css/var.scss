@@ -1,0 +1,37 @@
+/* ==================================================
+ * 			 		 全局Sass变量
+ * ================================================= */
+//======= Colors
+//白色，背景色
+$whiteBase:									  #fff !default;
+//页面背景色
+$lightWhiteBase:							#f5f5f5 !default;
+//分割线颜色
+$sprateWhiteBase:             #eee !default;
+
+
+//橙色，主色
+$orangeBase:									#FFE900 !default;
+$lightOrangeBase:									#FFCF54 !default;
+$darkOrangeBase:									#FF6052 !default;
+
+
+//黑色，文字色，重点文字
+$blackBase:									  #000 !default;
+//标题
+$darkBlackBase:						    #333 !default;
+//副标题
+$lightBlackBase:							#747474 !default;
+//辅助文字
+$moreLightBlackBase:          #c2c2c2 !default;
+$hyperlink:                   #0076FF !default;
+
+//字体大小
+$fontSize:                    12px;
+$largeFontSize:               14px;
+$smallFontSize:               10px;
+
+//间距
+$spaceBase: 10px;
+$largeSpaceBase: $spaceBase*2;
+$smallSpaceBase: $spaceBase/2;
